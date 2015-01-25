@@ -1,2 +1,2 @@
 # DealemmaApp
-Dealem.ma web app
+Dealem.ma web app demo
