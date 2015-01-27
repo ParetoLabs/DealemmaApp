@@ -10,7 +10,7 @@ MongoClient.connect('mongodb://127.0.0.1:27017/test', function (err, db) {
     }
     db.close();
 });
-var db = Mongoose.createConnection('localhost', 'mytestapp');
+var db = Mongoose.createConnection('localhost', 'dealemma-app');
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
