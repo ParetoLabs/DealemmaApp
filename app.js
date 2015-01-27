@@ -1,5 +1,9 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var Mongoose = require('mongoose');
+var http = require('http');
+var app = express();
+
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
 MongoClient.connect('mongodb://127.0.0.1:27017/test', function (err, db) {
@@ -15,12 +19,18 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
+//change host and port 0.0.0.0:3000
+
+  http.createServer(function (req, res) {
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+  }).listen(3000, '0.0.0.0');
+  console.log('Server running at http://0.0.0.0:3000/');
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
